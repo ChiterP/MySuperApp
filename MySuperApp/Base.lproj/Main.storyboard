@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Rq-me-alr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Kz-ne-Ggw">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Juy-Zp-57N">
-                                <rect key="frame" x="60" y="191" width="270" height="85"/>
+                                <rect key="frame" x="60" y="235" width="270" height="85"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OUX-AR-jXq">
                                         <rect key="frame" x="0.0" y="0.0" width="270" height="34"/>
@@ -32,29 +32,36 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KE5-hT-hAq">
-                                <rect key="frame" x="168" y="308" width="54" height="36"/>
+                                <rect key="frame" x="168" y="352" width="54" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Log In">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fj8-vn-7B4" kind="show" id="njD-Tp-ij8"/>
+                                    <action selector="logInBTAction" destination="8Rq-me-alr" eventType="touchUpInside" id="eRZ-ae-Kja"/>
+                                    <segue destination="fj8-vn-7B4" kind="show" id="aNH-4G-1Gk"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="saf-hw-D3x">
-                                <rect key="frame" x="39" y="375" width="312" height="30"/>
+                                <rect key="frame" x="39" y="419" width="312" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRe-3U-D0C">
                                         <rect key="frame" x="0.0" y="0.0" width="129" height="30"/>
                                         <state key="normal" title="Forgot user name?">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                                         </state>
+                                        <connections>
+                                            <action selector="forGotUserNameBTAction" destination="8Rq-me-alr" eventType="touchUpInside" id="CVL-PW-5Pf"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RqX-29-yy4">
                                         <rect key="frame" x="189" y="0.0" width="123" height="30"/>
                                         <state key="normal" title="Forgot password?">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                                         </state>
+                                        <connections>
+                                            <action selector="forgotPasswordBTAction" destination="8Rq-me-alr" eventType="touchUpInside" id="MbQ-qO-qGL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -71,33 +78,44 @@
                             <constraint firstItem="saf-hw-D3x" firstAttribute="centerX" secondItem="xOu-xi-rp1" secondAttribute="centerX" id="faS-QL-uvC"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Tgz-yP-mJ5"/>
+                    <connections>
+                        <outlet property="forgotPasswordButton" destination="RqX-29-yy4" id="bVx-Hg-2FC"/>
+                        <outlet property="forgotUserNameButton" destination="TRe-3U-D0C" id="Oja-Nk-NeW"/>
+                        <outlet property="logInButton" destination="KE5-hT-hAq" id="kND-4I-5Kz"/>
+                        <outlet property="passwordTF" destination="cPU-fV-YaE" id="O9U-E1-Ead"/>
+                        <outlet property="userNameTF" destination="OUX-AR-jXq" id="afL-WQ-uSR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZrJ-xN-5Os" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-87" y="118"/>
+            <point key="canvasLocation" x="841.53846153846155" y="117.29857819905213"/>
         </scene>
         <!--WelcomeViewController-->
         <scene sceneID="C84-uJ-eis">
             <objects>
-                <viewController id="fj8-vn-7B4" userLabel="WelcomeViewController" sceneMemberID="viewController">
+                <viewController id="fj8-vn-7B4" userLabel="WelcomeViewController" customClass="WelcomeViewController" customModule="MySuperApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R99-2t-E40">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, &lt;Name&gt;!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSS-6x-GvV">
-                                <rect key="frame" x="120" y="149" width="150" height="21"/>
+                                <rect key="frame" x="120" y="237" width="150" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZO-Nm-xHW">
-                                <rect key="frame" x="167.66666666666666" y="260" width="55" height="30"/>
+                                <rect key="frame" x="167.66666666666666" y="348" width="55" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="NpA-Xm-hed"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="hyF-WS-Pt5"/>
                                     <constraint firstAttribute="width" secondItem="OZO-Nm-xHW" secondAttribute="height" multiplier="11:6" id="iF6-E2-tRl"/>
                                 </constraints>
                                 <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOutBTAction" destination="fj8-vn-7B4" eventType="touchUpInside" id="zQ5-W2-TsE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="h5c-Ia-XGQ"/>
@@ -110,10 +128,33 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Kdi-W2-Nvu"/>
+                    <connections>
+                        <outlet property="logOutButtom" destination="OZO-Nm-xHW" id="Ka0-hd-eAV"/>
+                        <outlet property="userNameTF" destination="ZSS-6x-GvV" id="5dD-5X-jRA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XkH-De-8LG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834" y="117"/>
+            <point key="canvasLocation" x="1763.0769230769231" y="116.58767772511848"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YV5-QL-HWz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Kz-ne-Ggw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mDL-1I-MUF">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemGray2Color"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8Rq-me-alr" kind="relationship" relationship="rootViewController" id="Tg8-le-5Mv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HZG-xJ-guw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-87.692307692307693" y="117.29857819905213"/>
         </scene>
     </scenes>
     <resources>
