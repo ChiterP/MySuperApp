@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController {
     
     @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
@@ -52,6 +52,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    
     @IBAction func forgotPasswordBTAction() {
         showAlert(with: "Введите пароль:", and:  "\(userPassword)")
     }
@@ -65,9 +66,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         userNameTF.text = ""
         passwordTF.text = ""
     }
-    
 }
-
 
 extension LoginViewController {
     private func showAlert(with title: String, and message: String) {
@@ -77,5 +76,3 @@ extension LoginViewController {
         present(alert, animated: true)
     }
 }
-
-
