@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
@@ -18,15 +18,17 @@ class LoginViewController: UIViewController {
     
     private let userName = "User"
     private let userPassword = "Passw"
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+     
     
     //MARK: - Override methods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard  let loginVC = segue.destination as? WelcomeViewController else { return }
         loginVC.userName = userNameTF.text
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super .touchesBegan(touches, with: event)
+        self.view.endEditing(true)
     }
     
     //MARK: - IB Actions
