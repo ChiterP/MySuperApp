@@ -9,22 +9,29 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var userNameTF: UITextField!
-    @IBOutlet weak var passwordTF: UITextField!
+    @IBOutlet weak var loginUserNameTF: UITextField!
+    @IBOutlet weak var loginPasswordTF: UITextField!
     
-    
-    private let userName = ""
-    private let userPassword = ""
+    private let person = Person.getPersons()
     
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard  let loginVC = segue.destination as? WelcomeViewController else { return }
-        loginVC.userName = userNameTF.text
+        let tabBarController = segue.destination as! UITabBarController
+        let viewControllers = tabBarController.viewControllers!
+
+        for viewController in viewControllers {
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.userName = person.name + " " + person.sername
+            } else if let twoVC = viewController as? TwoViewController {
+                twoVC.userName = loginUserNameTF.text
+                twoVC.extUserName = person.name + " " + person.sername
+            }
+        }
     }
     
     //MARK: - IB Actions
     @IBAction func logInBTAction() {
-        if userNameTF.text != userName || passwordTF.text != userPassword {
+        if loginUserNameTF.text != person.login || loginPasswordTF.text != person.password {
             showAlert(with: "Неверное имя или пароль", and:  "")
             return
         }
@@ -33,16 +40,16 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func forgotPasswordBTAction() {
-        showAlert(with: "Введите пароль:", and: "\(userPassword)")
+        showAlert(with: "Введите пароль:", and: "\(person.password)")
     }
     
     @IBAction func forGotUserNameBTAction() {
-        showAlert(with: "Введите имя:", and: "\(userName)")
+        showAlert(with: "Введите имя:", and: "\(person.login)")
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
-        userNameTF.text = ""
-        passwordTF.text = ""
+        loginUserNameTF.text = ""
+        loginPasswordTF.text = ""
     }
 }
 
@@ -63,8 +70,8 @@ extension LoginViewController: UITextFieldDelegate {
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == userNameTF {
-            passwordTF.becomeFirstResponder()
+        if textField == loginUserNameTF {
+            loginPasswordTF.becomeFirstResponder()
         } else {
             logInBTAction()
         }

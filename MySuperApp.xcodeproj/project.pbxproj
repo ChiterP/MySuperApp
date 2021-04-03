@@ -15,7 +15,7 @@
 		43A2D1A626130E7A00A3022D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2D1A526130E7A00A3022D /* LoginViewController.swift */; };
 		43A2D1A9261314BA00A3022D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2D1A8261314BA00A3022D /* WelcomeViewController.swift */; };
 		43E767C4261742D1009764E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E767C3261742D1009764E3 /* User.swift */; };
-		43E767C92617565B009764E3 /* TabUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E767C82617565B009764E3 /* TabUserViewController.swift */; };
+		C1BDE8262617B46200917E5C /* TwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BDE8252617B46200917E5C /* TwoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		43A2D1A526130E7A00A3022D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		43A2D1A8261314BA00A3022D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		43E767C3261742D1009764E3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		43E767C82617565B009764E3 /* TabUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabUserViewController.swift; sourceTree = "<group>"; };
+		C1BDE8252617B46200917E5C /* TwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,9 +64,9 @@
 			children = (
 				43A2D1AB261314CE00A3022D /* ViewControllers */,
 				43DB6CFB26170A03000172C5 /* Storyboards */,
+				43E767C626174500009764E3 /* Models */,
 				43DB6CFC26170A4C000172C5 /* Resources */,
 				43DB6CFD26170A5D000172C5 /* Supporting */,
-				43E767C626174500009764E3 /* Models */,
 			);
 			path = MySuperApp;
 			sourceTree = "<group>";
@@ -75,8 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				43A2D1A526130E7A00A3022D /* LoginViewController.swift */,
+				C1BDE8252617B46200917E5C /* TwoViewController.swift */,
 				43A2D1A8261314BA00A3022D /* WelcomeViewController.swift */,
-				43E767C82617565B009764E3 /* TabUserViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -189,9 +189,9 @@
 				43E767C4261742D1009764E3 /* User.swift in Sources */,
 				43A2D1A626130E7A00A3022D /* LoginViewController.swift in Sources */,
 				43A2D1A9261314BA00A3022D /* WelcomeViewController.swift in Sources */,
-				43E767C92617565B009764E3 /* TabUserViewController.swift in Sources */,
 				43A2D1902613045C00A3022D /* AppDelegate.swift in Sources */,
 				43A2D1922613045C00A3022D /* SceneDelegate.swift in Sources */,
+				C1BDE8262617B46200917E5C /* TwoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

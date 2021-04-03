@@ -9,17 +9,18 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
-    
-    @IBOutlet weak var userNameTF: UILabel!
-    
-    @IBOutlet weak var logOutButtom: UIButton!
-    
+    @IBOutlet weak var wUserNameTF: UILabel!
+    @IBOutlet weak var fioUserTF: UILabel!
+    @IBOutlet weak var welcomImageTF: UILabel!
+
     var userName: String!
-    let userNamestatic = "Welcome, "
-    
+    let welcomTextStatic = "Welcome!!!"
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        userNameTF.text = userNamestatic + userName
+        welcomImageTF.text = "👍🏻"
+        wUserNameTF.text = welcomTextStatic
+        fioUserTF.text = userName
     }
     
     @IBAction func logOutBTAction() {
