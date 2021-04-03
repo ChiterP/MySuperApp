@@ -33,6 +33,7 @@ class LoginViewController: UIViewController {
     @IBAction func logInBTAction() {
         if loginUserNameTF.text != person.login || loginPasswordTF.text != person.password {
             showAlert(with: "Неверное имя или пароль", and:  "")
+            loginPasswordTF.text = ""
             return
         }
         
